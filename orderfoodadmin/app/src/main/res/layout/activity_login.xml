@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:background="#FDA663">
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:src="@drawable/background" />-->
+
+    <EditText
+        android:id="@+id/edtfood"
+        android:layout_width="114dp"
+        android:layout_height="49dp"
+        android:text="Food"
+        android:textSize="40dp"
+        android:background="@drawable/bogoc"
+        android:backgroundTint="#FDA663"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textStyle="bold"
+        android:layout_marginTop="132dp"
+        android:gravity="center"
+        android:layout_marginLeft="90dp"
+
+
+        />
+
+
+    />
+
+    <EditText
+        android:layout_width="114dp"
+        android:layout_height="49dp"
+        android:text="Order"
+        android:textSize="40dp"
+        android:background="@drawable/bogoclogo"
+        android:backgroundTint="@color/common_google_signin_btn_text_dark"
+        android:textColor="#FDA663"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/edtfood"
+        android:gravity="center"
+        android:layout_marginTop="132dp"
+
+
+        />
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/bogoclogo"
+        android:hint="Số điện thoại"
+        android:inputType="phone"
+        android:text="0123456789"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/etPhoneNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bogoc"
+        android:hint="Mật khẩu"
+        android:inputType="text"
+        android:text="123123"
+        android:textAlignment="center"
+        android:textColorHint="#FDA663"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bogoc"
+        android:backgroundTint="#FFFFFF"
+        android:text="Đăng nhập"
+        android:textColor="#FDA663"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
