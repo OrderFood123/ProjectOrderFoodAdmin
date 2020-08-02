@@ -1,4 +1,4 @@
-package com.example.orderfoodadmin.model;
+package com.example.orderfoodadmin.Model;
 
 public class Admin {
 
