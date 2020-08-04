@@ -52,6 +52,8 @@ public class TheLoaiActivity extends AppCompatActivity {
 
     private StorageTask storageTask;
 
+    String key;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,8 @@ public class TheLoaiActivity extends AppCompatActivity {
         imageTheLoai = findViewById(R.id.imageTheLoai);
         mProgress = findViewById(R.id.progress);
 
-        storageReference = FirebaseStorage.getInstance().getReference("/food/thucdon/themNhomMonAn");
+        storageReference = FirebaseStorage.getInstance().getReference("/food/thucdon/" + key);
+//        storageReference = FirebaseStorage.getInstance().getReference("/food/thucdon/themNhomMonAn" + key);
         databaseReference = FirebaseDatabase.getInstance().getReference("category");
         btnChooseFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,6 +172,8 @@ public class TheLoaiActivity extends AppCompatActivity {
 //            Toast.makeText(this, "Chưa chọn file", Toast.LENGTH_SHORT).show();
 //        }
 
+
+
         if (uriImage != null) {
             storageReference.putFile(uriImage).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
@@ -191,8 +196,9 @@ public class TheLoaiActivity extends AppCompatActivity {
 //                            String uploadId = databaseReference.getKey();
 //                            databaseReference.child(uploadId).setValue(upload);
 //                            databaseReference.child(uploadId).push().setValue(upload);
+                        String key = databaseReference.child("/food/thucdon").push().getKey();
+                        databaseReference.child(key).setValue(upload);
 
-                        databaseReference.push().setValue(upload);
                         Toast.makeText(TheLoaiActivity.this, "Tải thành công!", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(TheLoaiActivity.this, "Tải không thành công! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
