@@ -1,4 +1,4 @@
-package com.example.orderfoodadmin;
+package com.example.orderfoodadmin.Model;
 
 public class Upload {
 
