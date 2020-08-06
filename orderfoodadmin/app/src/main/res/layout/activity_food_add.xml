@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_button"
-                android:padding="5dp">
+                android:padding="10dp">
 
                 <ImageView
                     android:id="@+id/ivFood"
@@ -39,14 +39,34 @@
                     android:layout_gravity="center"
                     tools:ignore="ContentDescription" />
 
-                <!--        <ImageView-->
-                <!--            android:layout_width="40dp"-->
-                <!--            android:layout_height="40dp"-->
-                <!--            android:layout_alignParentTop="true"-->
-                <!--            android:layout_alignParentEnd="true"-->
-                <!--            android:src="@drawable/baseline_edit_24"-->
-                <!--            tools:ignore="ContentDescription" />-->
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/baseline_edit_24"
+                    tools:ignore="ContentDescription" />
             </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Tên hình"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/edtFileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawableEnd="@drawable/baseline_edit_24"
+                android:hint="Tên thư mục"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                tools:ignore="Autofill,HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -54,7 +74,8 @@
                 android:layout_marginTop="15dp"
                 android:text="Tên"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/edtName"
@@ -65,7 +86,7 @@
                 android:hint="Tên thức ăn"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="Autofill,HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -73,7 +94,8 @@
                 android:layout_marginTop="15dp"
                 android:text="Giá"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/edtPrice"
@@ -84,7 +106,7 @@
                 android:hint="Giá"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="Autofill,HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -92,7 +114,8 @@
                 android:layout_marginTop="15dp"
                 android:text="Khuyến mãi"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/edtDiscount"
@@ -103,7 +126,7 @@
                 android:hint="Khuyến mãi"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="Autofill,HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -111,7 +134,8 @@
                 android:layout_marginTop="15dp"
                 android:text="Mô tả"
                 android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/edtDescription"
@@ -121,7 +145,7 @@
                 android:hint="Mô tả"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
-                tools:ignore="HardcodedText" />
+                tools:ignore="Autofill,HardcodedText,TextFields" />
 
             <Button
                 android:id="@+id/btnDone"
