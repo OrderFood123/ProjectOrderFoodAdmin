@@ -5,14 +5,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfoodadmin.Model.User;
+import com.example.orderfoodadmin.model.User;
 import com.example.orderfoodadmin.R;
 
 import java.util.ArrayList;

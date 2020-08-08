@@ -12,7 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.orderfoodadmin.Model.Food;
+import com.example.orderfoodadmin.model.Food;
 import com.example.orderfoodadmin.R;
 import com.example.orderfoodadmin.adapter.FoodAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
