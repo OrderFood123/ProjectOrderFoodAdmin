@@ -12,9 +12,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.orderfoodadmin.Adapter.FoodAdapter;
 import com.example.orderfoodadmin.model.Food;
 import com.example.orderfoodadmin.R;
-import com.example.orderfoodadmin.adapter.FoodAdapter;
+import com.example.orderfoodadmin.Adapter.FoodAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

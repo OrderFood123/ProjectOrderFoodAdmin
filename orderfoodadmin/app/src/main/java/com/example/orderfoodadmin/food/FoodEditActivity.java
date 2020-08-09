@@ -102,7 +102,6 @@ public class FoodEditActivity extends AppCompatActivity {
                 final String mPrice = edtPrice.getText().toString();
                 final String mDiscount = edtDiscount.getText().toString();
                 final String mMenuID = "01";
-
                 ValueEventListener valueEventListener = new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

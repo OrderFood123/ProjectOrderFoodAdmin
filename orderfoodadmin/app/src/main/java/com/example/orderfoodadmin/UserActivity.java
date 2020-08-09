@@ -33,44 +33,10 @@ public class UserActivity extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         final DatabaseReference databaseReference = firebaseDatabase.getReference("user");
 
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                Iterable<DataSnapshot> dataSnapshotIterable = snapshot.getChildren();
-//                Iterator<DataSnapshot> iterator = dataSnapshotIterable.iterator();
-//                while (iterator.hasNext()) {
-//                    DataSnapshot next = iterator.next();
-//                    User user = next.getValue(User.class);
-//                    Log.d("Data", "Value is: " + user.getName());
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-//                    HashMap<String, Object> dataMap = (HashMap<String, Object>) snapshot.getValue();
-////                    for (String key : dataMap.keySet()) {
-////                        Object data = savedInstanceState.get(key);
-////                        try {
-////                            HashMap<String, Object> userData = (HashMap<String, Object>) data;
-////                            User user = new User((String) userData.get("phonNumber"), (String) userData.get("name"));
-////                            list.add(user);
-////                        } catch (ClassCastException cce){
-////                            try {
-////                                String mString = String.valueOf(dataMap.get(key));
-////
-////                            }catch (ClassCastException cce2){
-////
-////                            }
-////                        }
-////                    }
 
                     Iterable<DataSnapshot> dataSnapshotIterable = snapshot.getChildren();
                     Iterator<DataSnapshot> iterator = dataSnapshotIterable.iterator();
@@ -78,11 +44,7 @@ public class UserActivity extends AppCompatActivity {
                         DataSnapshot next = iterator.next();
                         User user = next.getValue(User.class);
                         Log.d("Data ", "Value is: " + user.getName());
-//                        Log.d("Data ", "Value is: " + user.getPassword());
-
-//                        Log.d("Data ", "Value is: " + user.getPassword());
                         list.add(user);
-//                        Log.d("Data ", "Value is: " + list.size());
                         adapter = new UserAdapter(UserActivity.this, list);
                         recyclerView.setAdapter(adapter);
                     }
@@ -94,8 +56,5 @@ public class UserActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 }

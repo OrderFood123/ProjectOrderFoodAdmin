@@ -71,7 +71,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/bogoc"
         android:hint="Mật khẩu"
-        android:inputType="text"
+        android:inputType="numberPassword"
         android:text="123123"
         android:textAlignment="center"
         android:textColorHint="#FDA663"

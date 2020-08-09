@@ -12,7 +12,7 @@ import com.example.orderfoodadmin.food.FoodListActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button btnFood;
+    Button btnFood, btnUserManager;
     private String TAG = "HomeActivity";
 
     @Override
@@ -26,6 +26,15 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.e(TAG, "btnFood onclick move activity");
                 Intent intent = new Intent(HomeActivity.this, FoodListActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnUserManager = findViewById(R.id.btnUserManager);
+        btnUserManager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "btnUserManager onclick move activity");
+                Intent intent = new Intent(HomeActivity.this, UserActivity.class);
                 startActivity(intent);
             }
         });

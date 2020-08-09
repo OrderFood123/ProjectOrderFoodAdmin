@@ -10,17 +10,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Home"
+        android:text="Order Food"
         android:textSize="50dp" />
 
     <Button
-        android:id="@+id/btnFood"
+    android:id="@+id/btnFood"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/border_button"
+    android:padding="10dp"
+    android:text="Món ăn" />
+
+    <Button
+        android:id="@+id/btnUserManager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/border_button"
         android:padding="10dp"
-        android:text="Thức ăn" />
+        android:text="Người dùng" />
 
 </LinearLayout>

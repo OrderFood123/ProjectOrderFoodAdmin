@@ -63,7 +63,6 @@ public class TheLoaiActivity extends AppCompatActivity {
         mProgress = findViewById(R.id.progress);
 
         storageReference = FirebaseStorage.getInstance().getReference("/food/thucdon/" + key);
-//        storageReference = FirebaseStorage.getInstance().getReference("/food/thucdon/themNhomMonAn" + key);
         databaseReference = FirebaseDatabase.getInstance().getReference("category");
         btnChooseFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,11 +74,6 @@ public class TheLoaiActivity extends AppCompatActivity {
         btnUpLoad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (storageTask != null && storageTask.isInProgress()) {
-//                    Toast.makeText(TheLoaiActivity.this, "Đang cập nhật hình", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    upLoadFile();
-//                }
                 upLoadFile();
             }
         });
@@ -90,16 +84,13 @@ public class TheLoaiActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void openFileChoose() {
-
         Intent i = new Intent();
         i.setType("image/*");
         i.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(i, PICK_IMAGE_REQUEST);
-
     }
 
     @Override
@@ -109,9 +100,7 @@ public class TheLoaiActivity extends AppCompatActivity {
                 && data != null && data.getData() != null) {
             uriImage = data.getData();
 
-            Picasso.get().load(uriImage).into(imageTheLoai);
-//            Picasso.get().load("http://i.imgur.com/DvpvklR.png").into(imageTheLoai);
-        }
+            Picasso.get().load(uriImage).into(imageTheLoai); }
     }
 
     private String getFileExtension(Uri uri) {
@@ -122,54 +111,6 @@ public class TheLoaiActivity extends AppCompatActivity {
     }
 
     private void upLoadFile() {
-//        if (uriImage != null) {
-//            StorageReference fiStorageReference = storageReference.child(System.currentTimeMillis()
-//                    + "." + getFileExtension(uriImage));
-//
-//            fiStorageReference.putFile(uriImage)
-//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            Handler handler = new Handler();
-//                            handler.postDelayed(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    mProgress.setProgress(0);
-//
-//                                }
-//                            }, 5000);
-//
-//                            Toast.makeText(TheLoaiActivity.this, "Tải thành công!", Toast.LENGTH_SHORT).show();
-////                            Upload upload = new Upload(etFileName.getText().toString().trim(),
-////                                    taskSnapshot.getMetadata().getReference().getDownloadUrl().getResult().toString());
-//                             Upload upload = new Upload(etFileName.getText().toString().trim(),
-//                                    taskSnapshot.getUploadSessionUri().toString());
-//
-//                            String uploadId = databaseReference.getKey();
-//                            databaseReference.child(uploadId).setValue(upload);
-//                        }
-//                    })
-//                    .addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(TheLoaiActivity.this, "Fail", Toast.LENGTH_SHORT).show();
-//                        }
-//                    })
-//                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
-//                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-//                            mProgress.setProgress((int) progress);
-//
-//                        }
-//                    });
-//
-//        } else {
-//            Toast.makeText(this, "Chưa chọn file", Toast.LENGTH_SHORT).show();
-//        }
-
-
-
         if (uriImage != null) {
             storageReference.putFile(uriImage).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
@@ -189,9 +130,6 @@ public class TheLoaiActivity extends AppCompatActivity {
 
                         Upload upload = new Upload(etFileName.getText().toString().trim(),
                                 downloadUri.toString());
-//                            String uploadId = databaseReference.getKey();
-//                            databaseReference.child(uploadId).setValue(upload);
-//                            databaseReference.child(uploadId).push().setValue(upload);
                         String key = databaseReference.child("/food/thucdon").push().getKey();
                         databaseReference.child(key).setValue(upload);
 
