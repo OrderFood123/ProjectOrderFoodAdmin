@@ -5,21 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".UserActivity">
+    tools:context="com.example.orderfoodadmin.UserActivity">
 
-        <TextView
-            android:id="@+id/textview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:text="Người dùng"/>
-
-    <androidx.recyclerview.widget.RecyclerView
+    <EditText
+        android:id="@+id/edt_user_phone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerView"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Phone" />
+
+    <EditText
+        android:id="@+id/edt_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/edt_user_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Password" />
+
+    <Button
+        android:id="@+id/btn_user_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="Add User" />
+
+    <ListView
+        android:id="@+id/listview_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp" />
 
 </LinearLayout>

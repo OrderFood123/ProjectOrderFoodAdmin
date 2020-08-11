@@ -1,43 +1,32 @@
 package com.example.orderfoodadmin.model;
 
+import androidx.annotation.Keep;
+@Keep  // when you want to publish your apk to Google play store, because proguard not add some java files
 public class User {
-    private String PhoneNumber;
-    private String Name;
-    private String Password;
-
-
+    String id, phone,name,password;
     public User() {
-
+    }
+    //Shortcut is alt+insert
+    public User(String id, String phone, String name, String password) {
+        this.id = id;
+        this.phone = phone;
+        this.name = name;
+        this.password = password;
     }
 
-
-    public User(String name, String password, String phoneNumber) {
-        Name = name;
-        Password = password;
-        PhoneNumber = phoneNumber;
+    public String getId() {
+        return id;
     }
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
     public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
+        return name;
     }
 
     public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
+        return password;
     }
 }

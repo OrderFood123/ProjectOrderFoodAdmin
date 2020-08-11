@@ -43,43 +43,57 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginAdmin(etPhoneNumber.getText().toString(), etPassword.getText().toString());
-            }
-        });
-
-    }
-
-    private void loginAdmin(final String phoneNumber, String passowrd) {
-        Context context;
-        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
-        progressDialog.setMessage("Đang lấy dữ liệu...");
-        progressDialog.show();
-
-        final String localPhonenumber = phoneNumber;
-        final String localPassword = passowrd;
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.child(localPhonenumber).exists()) {
-                    progressDialog.dismiss();
-                    Admin admin = snapshot.child(localPhonenumber).getValue(Admin.class);
-                    admin.setPhoneNumber(localPhonenumber);
-                    if (admin.getPassword_admin().equals(localPassword)) {
-                        Intent iLogin = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(iLogin);
-                        Toast.makeText(LoginActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Đăng nhập không thành công!", Toast.LENGTH_SHORT).show();
-                    }
+                if (etPhoneNumber.length() == 0) {
+                    etPhoneNumber.setError("Thông tin bắt buộc");
                 } else {
-                    progressDialog.dismiss();
-                    Toast.makeText(LoginActivity.this, "Số điện thoại không tồn tại!", Toast.LENGTH_SHORT).show();
+                    etPhoneNumber.getText().toString();
+                    if (etPassword.length() == 0) {
+                        etPassword.setError("Thông tin bắt buộc");
+                    } else {
+                        if (etPassword.length() > 6) {
+                            etPassword.setError("Mật khẩu bao gồm 6 kí tự");
+                        }else {
+                            etPassword.getText().toString();
+                        }
+                loginAdmin(etPhoneNumber.getText().toString(), etPassword.getText().toString());
+                    }
                 }
+
             }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            private void loginAdmin(final String phoneNumber, String passowrd) {
+                Context context;
+                final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+                progressDialog.setMessage("Đang lấy dữ liệu...");
+                progressDialog.show();
 
+                final String localPhonenumber = phoneNumber;
+                final String localPassword = passowrd;
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.child(localPhonenumber).exists()) {
+                            progressDialog.dismiss();
+                            Admin admin = snapshot.child(localPhonenumber).getValue(Admin.class);
+                            admin.setPhoneNumber(localPhonenumber);
+                            if (admin.getPassword_admin().equals(localPassword)) {
+                                Intent iLogin = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(iLogin);
+                                Toast.makeText(LoginActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Đăng nhập không thành công!", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Số điện thoại không tồn tại!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }
