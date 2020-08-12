@@ -46,19 +46,23 @@ public class LoginActivity extends AppCompatActivity {
                 if (etPhoneNumber.length() == 0) {
                     etPhoneNumber.setError("Thông tin bắt buộc");
                 } else {
-                    etPhoneNumber.getText().toString();
-                    if (etPassword.length() == 0) {
-                        etPassword.setError("Thông tin bắt buộc");
+                    if (etPhoneNumber.length() < 10 || etPhoneNumber.length() > 10) {
+                        etPhoneNumber.setError("Số điện thoại bao gồm 10 chữ số");
                     } else {
-                        if (etPassword.length() > 6) {
-                            etPassword.setError("Mật khẩu bao gồm 6 kí tự");
-                        }else {
-                            etPassword.getText().toString();
+                        etPhoneNumber.getText().toString();
+                        if (etPassword.length() == 0) {
+                            etPassword.setError("Thông tin bắt buộc");
+                        } else {
+                            if (etPassword.length() > 6 || etPassword.length() < 6) {
+                                etPassword.setError("Mật khẩu bao gồm 6 kí tự");
+                            } else {
+                                etPassword.getText().toString();
+                                loginAdmin(etPhoneNumber.getText().toString(), etPassword.getText().toString());
+                            }
+
                         }
-                loginAdmin(etPhoneNumber.getText().toString(), etPassword.getText().toString());
                     }
                 }
-
             }
 
             private void loginAdmin(final String phoneNumber, String passowrd) {

@@ -57,7 +57,6 @@
         android:background="@drawable/bogoclogo"
         android:hint="Số điện thoại"
         android:inputType="phone"
-        android:text="0123456789"
         android:textAlignment="center"
         android:textColorHint="#FFFFFF"
         android:textStyle="italic" />
@@ -72,9 +71,8 @@
         android:background="@drawable/bogoc"
         android:hint="Mật khẩu"
         android:inputType="numberPassword"
-        android:text="123123"
         android:textAlignment="center"
-        android:textColorHint="#FDA663"
+        android:textColorHint="#ffffff"
         android:textStyle="italic" />
 
     <Button
