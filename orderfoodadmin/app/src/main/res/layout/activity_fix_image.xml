@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="type.TheLoaiActivity">
+
+    <TextView
+        android:id="@+id/tvFix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sửa Thông Tin"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/etNewFileName"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tvFix"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:hint="Tên thư mục mới" />
+
+    <ImageView
+        android:id="@+id/newImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/progress"
+        android:layout_below="@+id/etNewFileName"
+        android:src="@drawable/ic_baseline_library_add_24"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnEditAccept" />
+    <Button
+        android:id="@+id/btnEditAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Xác nhận sửa đổi"
+        />
+
+
+
+
+</RelativeLayout>

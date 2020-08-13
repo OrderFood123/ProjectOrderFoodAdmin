@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".TheLoaiActivity">
+    tools:context="type.TheLoaiActivity">
 
     <TextView
         android:id="@+id/tvTheLoai"
@@ -22,18 +22,25 @@
         android:layout_height="40dp"
         android:layout_below="@+id/tvTheLoai"
         android:layout_marginTop="30dp"
-        android:layout_toRightOf="@+id/btnChooseFile"
+        android:layout_marginLeft="40dp"
         android:hint="Tên thư mục" />
 
-    <Button
-        android:id="@+id/btnChooseFile"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/tvTheLoai"
-        android:layout_marginTop="30dp"
+    <ImageView
+        android:id="@+id/imageTheLoai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/progress"
+        android:layout_below="@+id/etFileName"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/ic_baseline_library_add_24" />
 
-        android:text="Chọn" />
-
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnUpLoad" />
     <Button
         android:id="@+id/btnUpLoad"
         android:layout_width="wrap_content"
@@ -43,20 +50,6 @@
         android:layout_marginBottom="20dp"
         android:text="Cập nhật hình ảnh"
         />
-
-    <ImageView
-        android:id="@+id/imageTheLoai"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/progress"
-        android:layout_below="@+id/btnChooseFile" />
-
-    <ProgressBar
-        android:id="@+id/progress"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnUpLoad" />
 
     <TextView
         android:id="@+id/tvShowUpload"
