@@ -76,6 +76,8 @@ public class UserActivity extends AppCompatActivity {
                                         phone_et.getText().toString().trim(),
                                         name_et.getText().toString().trim(),
                                         password_et.getText().toString().trim());
+
+
                                 reference.setValue(userModel1);
 
                             }

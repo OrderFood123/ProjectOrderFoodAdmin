@@ -27,11 +27,11 @@ public class UserAdapter extends ArrayAdapter<User> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View ListItem = inflater.inflate(R.layout.item_user,null,true);
-        TextView phone_tv = ListItem.findViewById(R.id.tv_user_phone);
+
         TextView name_tv = ListItem.findViewById(R.id.tv_user_name);
         TextView password_tv = ListItem.findViewById(R.id.tv_user_password);
         User userModel = userModelList.get(position);
-        phone_tv.setText("Phone: "+userModel.getPhone());
+
         name_tv.setText("Name: "+userModel.getName());
         password_tv.setText("Password: "+userModel.getPassword());
         return ListItem;
