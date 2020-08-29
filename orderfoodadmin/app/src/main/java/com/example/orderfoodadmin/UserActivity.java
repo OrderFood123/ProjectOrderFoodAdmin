@@ -97,7 +97,7 @@ public class UserActivity extends AppCompatActivity {
         String id = databaseuser.push().getKey();
         User userModel = new User(id,Phone,Name,Password);
         databaseuser.child(id).setValue(userModel);
-//        databaseuser.child(Phone).setValue(id);  // xung dot userModel trong onDataChange
+
     }
     @Override
     protected void onStart() {
